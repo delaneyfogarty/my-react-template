@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Navigation from "./Navigation.jsx";
-import styles from "./Menu.css";
-import classNames from "classnames";
+import { useState } from 'react';
+import Navigation from './Navigation.jsx';
+import styles from './Menu.css';
+import classNames from 'classnames';
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);

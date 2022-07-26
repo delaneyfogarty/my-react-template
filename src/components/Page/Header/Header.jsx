@@ -1,6 +1,6 @@
-import Menu from "./Menu.jsx";
-import Navigation from "./Navigation.jsx";
-import styles from "./Header.css";
+import Menu from './Menu.jsx';
+import Navigation from './Navigation.jsx';
+import styles from './Header.css';
 
 export default function Header() {
   return (
