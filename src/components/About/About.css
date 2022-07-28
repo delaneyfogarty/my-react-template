@@ -10,7 +10,7 @@
 
   .PasswordControl {
     input {
-      background: pink;
+      background: var(--lilac);
     }
   }
 }

@@ -5,9 +5,9 @@
 :root {
   --primary-font: 'Oswald', 'sans-serif';
   --russian-violet: #816e94;
-  --magenta: #ff0aceff;
+  --lilac: #eeb5eb;
   --russian-violet-2: #4b2142;
-  --mint: #9fe5b5ff;
+  --mint: #e5c1bd;
 
   --padding: 40px;
   @media (min-width: 750px) {
