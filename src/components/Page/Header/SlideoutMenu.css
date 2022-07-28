@@ -1,15 +1,16 @@
-.Menu {
+.SlideoutMenu {
   position: relative;
   height: 30px;
   width: 30px;
+  color: var(--magenta);
 
   &::before {
-    content: "☰";
+    content: '☰';
   }
 
   &.Open {
     &::before {
-      content: "✕";
+      content: '✕';
     }
 
     .MenuContainer {

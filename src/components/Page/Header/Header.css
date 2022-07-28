@@ -1,7 +1,8 @@
 .Header {
   position: sticky;
   top: 0;
-  background: pink;
+  background: var(--magenta);
+  color: var(--russian-violet-2);
 
   height: 30px;
 

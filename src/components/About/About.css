@@ -1,0 +1,16 @@
+.About {
+  padding: var(--padding);
+
+  form {
+    color: var(--russian-violet);
+    background: var(--mint);
+    padding: 30px 40px;
+    width: 400px;
+  }
+
+  .PasswordControl {
+    input {
+      background: pink;
+    }
+  }
+}
