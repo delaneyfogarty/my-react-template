@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
-import { useSearch } from '../../state/hooks/url.js';
-import Card from '../Pokedex/Card';
+import Card from './Card.jsx';
 
 export default function PokemonList({ pokedex }) {
   return (

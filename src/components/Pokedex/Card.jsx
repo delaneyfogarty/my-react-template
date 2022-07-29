@@ -1,4 +1,4 @@
-function Card({ pokemon }) {
+export default function Card({ pokemon }) {
   const { url_image, pokemon: name, type_1, type_2 } = pokemon;
 
   return (
@@ -13,4 +13,8 @@ function Card({ pokemon }) {
       </div>
     </li>
   );
+}
+
+function Type({ type }) {
+  return type === 'NA' ? null : <span>{type}</span>;
 }
