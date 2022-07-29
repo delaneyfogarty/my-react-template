@@ -46,7 +46,7 @@ export default function Search() {
           <TypeOption key={type} type={type} count={count} />
         ))}
       </SelectControl>{' '}
-      <FormButton>Search</FormButton>
+      <FormButton className="search-button"> 🔎 </FormButton>
     </form>
   );
 }
