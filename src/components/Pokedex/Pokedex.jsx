@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import { usePokedex } from '../state/hooks/pokedex.js';
 import PokemonList from './PokemonList.jsx';
-// import Search from './Search.jsx';
+import Search from './Search.jsx';
 
 export default function Pokedex() {
   const [searchParams] = useSearchParams();
@@ -11,7 +11,7 @@ export default function Pokedex() {
 
   return (
     <section>
-      {/* <Search /> */}
+      <Search />
       <PokemonList pokedex={pokedex} />
     </section>
   );

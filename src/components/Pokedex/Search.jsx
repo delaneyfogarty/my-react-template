@@ -10,7 +10,7 @@ import {
 export default function Search() {
   const { types } = useTypes();
   const { params, setParams } = useSearch();
-  const { formData, setFormData } = useState({});
+  const [formData, setFormData] = useState({});
   const { pokemon, type } = params;
 
   useEffect(() => {
@@ -34,8 +34,7 @@ export default function Search() {
         value={formData.pokemon}
         onChange={handleChange}
       />
-
-      <SelectControl
+      {/* <SelectControl
         label="type"
         name="type"
         value={formData.type}
@@ -45,13 +44,12 @@ export default function Search() {
         {types.map(({ type, count }) => (
           <TypeOption key={type} type={type} count={count} />
         ))}
-      </SelectControl>
-
-      <FormButton>Search</FormButton>
+      </SelectControl> */}
+      {/* <FormButton>Search</FormButton> */}
     </form>
   );
 }
 
-function TypeOption({ type, count }) {
-  return <option value={type}>{`${type} (${count})`}</option>;
-}
+// function TypeOption({ type, count }) {
+//   return <option value={type}>{`${type} (${count})`}</option>;
+// }
