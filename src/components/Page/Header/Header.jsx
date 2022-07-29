@@ -14,8 +14,6 @@ export default function Header() {
       <div className={styles.NavigationContainer}>
         <Navigation />
       </div>
-
-      <div>User</div>
     </header>
   );
 }

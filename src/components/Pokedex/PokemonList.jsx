@@ -12,16 +12,14 @@ export default function PokemonList({ pokedex, onLoadNext }) {
   }, [inView]);
 
   return (
-    <div className={styles.PokemonList}>
-      <ul>
-        {pokedex.map((pokemon, i) => (
-          <Card
-            key={pokemon._id + i}
-            pokemon={pokemon}
-            loadRef={i === pokedex.length - 3 ? ref : null}
-          />
-        ))}
-      </ul>
-    </div>
+    <ul className={styles.PokemonList}>
+      {pokedex.map((pokemon, i) => (
+        <Card
+          key={pokemon._id + i}
+          pokemon={pokemon}
+          loadRef={i === pokedex.length - 3 ? ref : null}
+        />
+      ))}
+    </ul>
   );
 }

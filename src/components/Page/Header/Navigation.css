@@ -13,5 +13,6 @@
     padding: 3px 7px;
     color: var(--russian-violet-2);
     text-decoration: none;
+    padding-top: 6px;
   }
 }
