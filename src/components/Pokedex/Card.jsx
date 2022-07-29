@@ -1,3 +1,5 @@
+import styles from './Card.css';
+
 export default function Card({ pokemon }) {
   const { url_image, pokemon: name, type_1, type_2 } = pokemon;
 

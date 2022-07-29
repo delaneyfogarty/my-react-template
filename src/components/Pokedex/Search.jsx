@@ -6,6 +6,7 @@ import {
   SelectControl,
   FormButton,
 } from '../Forms/FormControls.jsx';
+import styles from './Search.css';
 
 export default function Search() {
   const { types } = useTypes();
@@ -27,14 +28,14 @@ export default function Search() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.Search}>
       <InputControl
         label="pokemon"
         name="pokemon"
         value={formData.pokemon}
         onChange={handleChange}
       />
-      {/* <SelectControl
+      <SelectControl
         label="type"
         name="type"
         value={formData.type}
@@ -44,12 +45,12 @@ export default function Search() {
         {types.map(({ type, count }) => (
           <TypeOption key={type} type={type} count={count} />
         ))}
-      </SelectControl> */}
-      {/* <FormButton>Search</FormButton> */}
+      </SelectControl>{' '}
+      <FormButton>Search</FormButton>
     </form>
   );
 }
 
-// function TypeOption({ type, count }) {
-//   return <option value={type}>{`${type} (${count})`}</option>;
-// }
+function TypeOption({ type, count }) {
+  return <option value={type}>{`${type} (${count})`}</option>;
+}
