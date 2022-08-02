@@ -1,14 +1,10 @@
-import { client } from './client.js';
+import client from './supabase-client.js';
 
 export async function getFamiliesWithBunnies() {
   const response = await client.from('fuzzy_families').select(`
 	id,
 	name,
-	avatar,
-	bunnies:bunnies(
-		id,
-		familyId: family_id,
-		name
-	)`);
+	avatar`);
+  console.log('response', response);
   return response;
 }

@@ -11,6 +11,7 @@ export function useFamilies() {
   const { families } = useContext(FuzzyBunnyContext);
   const { familiesDispatch } = useContext(FuzzyBunnyDispatchContext);
 
+  console.log('families', families);
   useEffect(() => {
     if (families) return;
     let ignore = false;

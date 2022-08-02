@@ -26,9 +26,9 @@ export default function FuzzyBunnyProvider({ children }) {
 
   return (
     <FuzzyBunnyContext.Provider value={stateValue}>
-      <FuzzyBunnyDispatchContext value={dispatchValue}>
+      <FuzzyBunnyDispatchContext.Provider value={dispatchValue}>
         {children}
-      </FuzzyBunnyDispatchContext>
+      </FuzzyBunnyDispatchContext.Provider>
     </FuzzyBunnyContext.Provider>
   );
 }
