@@ -1,8 +1,9 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useReducer, useMemo } from 'react';
 
 export const FuzzyBunnyContext = createContext();
+export const FuzzyBunnyDispatchContext = createContext();
 
-function reducer(families, { type, payload }) {
+function reducer(list, { type, payload }) {
   switch (type) {
     case 'load':
       return payload;
@@ -12,13 +13,22 @@ function reducer(families, { type, payload }) {
 }
 
 export default function FuzzyBunnyProvider({ children }) {
-  const [families, dispatch] = useReducer(reducer, null);
+  const [families, familiesDispatch] = useReducer(reducer, null);
 
-  const value = { families, dispatch };
+  const stateValue = { families };
+
+  const dispatchValue = useMemo(
+    () => ({
+      familiesDispatch,
+    }),
+    [familiesDispatch]
+  );
 
   return (
-    <FuzzyBunnyContext.Provider value={value}>
-      {children}
+    <FuzzyBunnyContext.Provider value={stateValue}>
+      <FuzzyBunnyDispatchContext value={dispatchValue}>
+        {children}
+      </FuzzyBunnyDispatchContext>
     </FuzzyBunnyContext.Provider>
   );
 }
