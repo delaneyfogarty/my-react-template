@@ -11,8 +11,10 @@
   --green: #a2e89c;
 
   --padding: 40px;
+  --padding-half: 20px;
   @media (min-width: 750px) {
     --padding: 30px;
+    --padding-half: 15px;
   }
 }
 body {

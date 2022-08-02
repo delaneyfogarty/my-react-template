@@ -1,3 +1,5 @@
+import styles from './Family.css';
+
 export default function Family({ family }) {
-  return <div>{family.name}</div>;
+  return <div className={styles.Family}>{family.name}</div>;
 }

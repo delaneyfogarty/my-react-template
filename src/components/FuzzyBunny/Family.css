@@ -1,0 +1,7 @@
+.Family {
+  position: relative;
+  padding: 25px 15px 20px 15px;
+  border: 1px solid var(--mint);
+  background: var(--green);
+  min-height: 100px;
+}

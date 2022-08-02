@@ -2,15 +2,15 @@
   padding: var(--padding);
 
   form {
-    color: var(--russian-violet);
-    background: var(--mint);
+    color: var(--russian-violet-2);
+    background: var(--lilac);
     padding: 30px 40px;
     width: 400px;
   }
 
   .PasswordControl {
     input {
-      background: var(--lilac);
+      background: var(--mint);
     }
   }
 }

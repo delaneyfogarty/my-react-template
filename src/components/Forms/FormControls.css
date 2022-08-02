@@ -13,7 +13,7 @@
     display: block;
     font-size: 0.8em;
     margin-bottom: 1px;
-    color: var(--mint);
+    color: var(--russian-violet);
     padding: 5px;
   }
 
@@ -60,4 +60,8 @@
   legend {
     text-align: center;
   }
+}
+
+.label-text {
+  color: var(--russian-violet);
 }
