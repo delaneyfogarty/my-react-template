@@ -4,7 +4,7 @@ import styles from './FuzzyBunny.css';
 
 const navigation = [
   { to: '', label: 'Families' },
-  // bunnies
+  { to: 'bunnies', label: 'Bunnies' },
 ];
 
 export default function FuzzyBunny() {
