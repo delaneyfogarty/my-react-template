@@ -9,6 +9,8 @@ function reducer(list, { type, payload }) {
       return payload;
     case 'add':
       return [...list, payload];
+    case 'remove':
+      return list.filter((f) => f.id !== payload.id);
     default:
       throw Error(`Unknown action: ${type}`);
   }

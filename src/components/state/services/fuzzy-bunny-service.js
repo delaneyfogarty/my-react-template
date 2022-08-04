@@ -4,15 +4,21 @@ export async function getFamiliesWithBunnies() {
   const response = await client.from('fuzzy_families').select(`
 	id,
 	name,
-	bunnies: bunnies(
-			id,
-			familyId: familyId,
-			name
+	avatar
 	)`);
   return response;
 }
 
 export async function addFamily(family) {
   const response = await client.from('fuzzy_families').insert(family).single();
+  return response;
+}
+
+export async function removeFamily(id) {
+  const response = await client
+    .from('fuzzy_families')
+    .delete()
+    .eq('id', id)
+    .single();
   return response;
 }
