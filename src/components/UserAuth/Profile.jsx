@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useProfile } from '../../state/hooks/userAuth.js';
-import { useForm } from '../../state/hooks/formData.js';
+import { useProfile } from '../state/hooks/userAuth.js';
+import { useForm } from '../state/hooks/formData.js';
 import { FormButton, InputControl } from '../Forms/FormControls.jsx';
 
 export default function Profile() {
