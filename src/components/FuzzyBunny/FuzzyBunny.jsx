@@ -2,10 +2,7 @@ import { Outlet } from 'react-router-dom';
 import Navigation from '../Page/Header/Navigation';
 import styles from './FuzzyBunny.css';
 
-const navigation = [
-  { to: '', label: 'Families' },
-  { to: 'bunnies', label: 'Bunnies' },
-];
+const navigation = [{ to: '', label: 'Families' }];
 
 export default function FuzzyBunny() {
   return (

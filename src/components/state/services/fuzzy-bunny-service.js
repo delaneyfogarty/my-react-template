@@ -22,3 +22,11 @@ export async function removeFamily(id) {
     .single();
   return response;
 }
+
+export async function updateFamily(id, familyUpdate) {
+  return await client
+    .from('fuzzy_families')
+    .update(familyUpdate)
+    .eq('id', id)
+    .single();
+}

@@ -11,6 +11,8 @@ function reducer(list, { type, payload }) {
       return [...list, payload];
     case 'remove':
       return list.filter((f) => f.id !== payload.id);
+    case 'update':
+      return list.map((f) => (f.id === payload.id ? payload : f));
     default:
       throw Error(`Unknown action: ${type}`);
   }

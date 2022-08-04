@@ -7,6 +7,7 @@ import {
   getFamiliesWithBunnies,
   addFamily,
   removeFamily,
+  updateFamily,
 } from '../services/fuzzy-bunny-service';
 import { showSuccess, showError } from '../services/toaster';
 
@@ -71,5 +72,11 @@ export function useFamilyActions() {
     success: (data) => `Removed family "${data.name}"`,
   });
 
-  return useMemo(() => ({ add, remove }), [familiesDispatch]);
+  const update = createAction({
+    service: updateFamily,
+    type: 'update',
+    success: (data) => `Updated family "${data.name}"`,
+  });
+
+  return useMemo(() => ({ add, remove, update }), [familiesDispatch]);
 }
