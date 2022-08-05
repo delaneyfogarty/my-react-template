@@ -6,7 +6,7 @@ import {
   upsertProfile,
   uploadAvatar,
 } from '../services/user-service.js';
-import { showError } from '../services/toaster.js';
+import { showError, showSuccess } from '../services/toaster.js';
 import { UserStateContext, UserActionContext } from '../context/UserContext';
 
 export function useStatus() {
@@ -61,6 +61,7 @@ export function useProfile() {
       if (data) {
         console.log('saved profile', data);
         setProfile(data);
+        showSuccess(`Profile updated for "${data.username}"`);
       }
     }
   };
