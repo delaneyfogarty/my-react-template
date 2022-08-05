@@ -34,11 +34,13 @@ export function usePokedex(searchParams, options) {
   }, [searchQuery]);
 
   useEffect(() => {
+    let ignore = false;
     const fetch = async () => {
       const { data = {}, error } = await getPokedex(searchParams, page);
 
       if (data) {
         const { results, count } = data;
+        if (ignore) return;
         setCount(count);
         setPage(page);
         setPerPage(perPage);
@@ -57,6 +59,7 @@ export function usePokedex(searchParams, options) {
     };
 
     fetch();
+    return () => (ignore = true);
   }, [query, page]);
 
   const addPage = () => {

@@ -51,7 +51,8 @@ export function useProfile() {
     if (url) {
       console.log('avatar upload', url, profile);
       const { data, error } = await upsertProfile({
-        ...profile,
+        // ...profile,
+        name: profile.username,
         avatar: url,
       });
 
@@ -61,7 +62,7 @@ export function useProfile() {
       if (data) {
         console.log('saved profile', data);
         setProfile(data);
-        showSuccess(`Profile updated for "${data.username}"`);
+        showSuccess(`Profile updated for "${data.name}"`);
       }
     }
   };
