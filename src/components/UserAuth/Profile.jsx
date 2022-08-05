@@ -3,11 +3,13 @@ import styles from './Profile.css';
 import { useProfile } from '../state/hooks/userAuth.js';
 import { useForm } from '../state/hooks/formData.js';
 import { FormButton, InputControl } from '../Forms/FormControls.jsx';
+import Avatar from './Avatar';
 
 export default function Profile() {
   const [, updateProfile] = useProfile();
   const [profile, handleChange] = useForm();
   const [preview, setPreview] = useState();
+  const [updating, setUpdating] = useState(false);
 
   const handlePreview = (e) => {
     const target = e.target;
@@ -21,9 +23,11 @@ export default function Profile() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    updateProfile(profile);
+    setUpdating(true);
+    await updateProfile(profile);
+    setUpdating(false);
   };
 
   return (
@@ -48,10 +52,12 @@ export default function Profile() {
           required
           onChange={handlePreview}
         >
-          {preview && <img src={preview} alt="avatar preview" />}
+          <Avatar src={preview} username={profile.username} />
         </InputControl>
 
-        <FormButton>Update</FormButton>
+        <FormButton disabled={updating}>
+          {updating ? 'Updating...' : 'Update'}
+        </FormButton>
       </form>
     </section>
   );
