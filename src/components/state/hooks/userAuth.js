@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import {
   signIn as signInService,
   signUp as signUpService,
+  signOut as signOutService,
   upsertProfile,
   uploadAvatar,
 } from '../services/user-service.js';
@@ -30,10 +31,12 @@ export function useAuth() {
 
   const signIn = createAction(signInService);
   const signUp = createAction(signUpService);
+  const signOut = createAction(signOutService);
 
   return {
     signIn,
     signUp,
+    signOut,
   };
 }
 export function useProfile() {

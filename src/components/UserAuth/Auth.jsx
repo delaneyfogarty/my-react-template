@@ -1,8 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import { InputControl, FormButton } from '../Forms/FormControls.jsx';
-import { useForm } from '../../state/hooks/formData.js';
-import { useAuth } from '../../state/hooks/userAuth.js';
-import styles from './Auth.css';
+import { useForm } from '../state/hooks/formData.js';
+import { useAuth } from '../state/hooks/userAuth.js';
 
 export default function Auth() {
   const { signIn, signUp } = useAuth();
@@ -40,7 +39,7 @@ function AuthForm({ header, button, prompt, link, onSubmit }) {
   };
 
   return (
-    <section className={styles.Auth}>
+    <section>
       <form onSubmit={handleSubmit}>
         <h1>{header}</h1>
 

@@ -16,6 +16,10 @@ export async function signOut() {
   return await client.auth.signOut();
 }
 
+export function onAuthChange(handleAuthChange) {
+  return client.auth.onAuthStateChange(handleAuthChange);
+}
+
 const PROFILE = 'profile';
 
 export function getLocalProfile() {
@@ -30,6 +34,10 @@ export function getLocalProfile() {
 
 export function saveLocalProfile(profile) {
   localStorage.setItem(PROFILE, JSON.stringify(profile));
+}
+
+export function removeLocalProfile() {
+  localStorage.removeItem(PROFILE);
 }
 
 export async function getProfile() {
