@@ -1,5 +1,6 @@
 import SlideoutMenu from './SlideoutMenu.jsx';
 import Navigation from './Navigation.jsx';
+import Menu from './User';
 import styles from './Header.css';
 
 const primary = [
@@ -20,6 +21,7 @@ export default function Header() {
 
       <div className={styles.NavigationContainer}>
         <Navigation navigation={primary} />
+        <Menu />
       </div>
     </header>
   );

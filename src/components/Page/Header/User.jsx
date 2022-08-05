@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import { useAuth } from '../../../state/hooks/userAuth.js';
+import { useAuth } from '../../state/hooks/userAuth.js';
 import styles from './User.css';
+import { removeLocalProfile } from '../../state/services/user-service.js';
 
 export default function Menu() {
   const { signOut } = useAuth();
@@ -21,8 +22,8 @@ export default function Menu() {
       User
       <button onClick={handleClick}>v</button>
       <div className={styles.UserMenu}>
-        <Link to="about">Profile</Link>
-        <Link to="user" onClick={signOut}>
+        <Link to="/about">Profile</Link>
+        <Link to="/user" onClick={signOut}>
           Sign Out
         </Link>
       </div>

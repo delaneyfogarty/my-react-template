@@ -6,6 +6,7 @@ import {
   removeLocalProfile,
   getProfile,
   onAuthChange,
+  signOut,
 } from '../services/user-service.js';
 
 export const UserStateContext = createContext();
@@ -30,9 +31,9 @@ export default function UserProvider({ children }) {
     if (user) loadProfile();
 
     const { data } = onAuthChange((event) => {
-      console.log('auth change event');
-      if (event == 'Signed In') loadProfile();
-      if (event == 'Signed Out') {
+      console.log('auth change event', event);
+      if (event == 'SIGNED_IN') loadProfile();
+      if (event == 'SIGNED_OUT') {
         setUser(null);
         setProfile(null);
         removeLocalProfile();
